@@ -1,0 +1,191 @@
+1486325977046|2|statement|connection 1|alter table bank_account drop foreign key FK_thgcmdvyemj0yg060nvfictd6|
+1486325977054|5|statement|connection 1|alter table client drop foreign key FK_e8oc3sulkpvxdascbnkpchunx|
+1486325977058|1|statement|connection 1|alter table worker drop foreign key FK_89c2qks2v6rs5fdov8iqcwfr7|
+1486325977063|3|statement|connection 1|drop table if exists bank|
+1486325977127|61|statement|connection 1|drop table if exists bank_account|
+1486325977132|1|statement|connection 1|drop table if exists client|
+1486325977146|12|statement|connection 1|drop table if exists worker|
+1486325978176|1029|statement|connection 1|create table bank (id bigint not null, name varchar(255), primary key (id))|
+1486325978655|476|statement|connection 1|create table bank_account (id bigint not null, amount double precision, amount_of_credit double precision, currency double precision, client_id bigint not null, primary key (id))|
+1486325978922|266|statement|connection 1|create table client (id bigint not null, address varchar(255), email varchar(255), first_name varchar(255), last_name varchar(255), phone_number varchar(255), bank_id bigint not null, primary key (id))|
+1486325979318|394|statement|connection 1|create table worker (id bigint not null, first_name varchar(255), last_name varchar(255), phone_number varchar(255), status varchar(255), bank_id bigint not null, primary key (id))|
+1486325980547|1228|statement|connection 1|alter table bank_account add index FK_thgcmdvyemj0yg060nvfictd6 (client_id), add constraint FK_thgcmdvyemj0yg060nvfictd6 foreign key (client_id) references client (id)|
+1486325981465|916|statement|connection 1|alter table client add index FK_e8oc3sulkpvxdascbnkpchunx (bank_id), add constraint FK_e8oc3sulkpvxdascbnkpchunx foreign key (bank_id) references bank (id)|
+1486325982874|1407|statement|connection 1|alter table worker add index FK_89c2qks2v6rs5fdov8iqcwfr7 (bank_id), add constraint FK_89c2qks2v6rs5fdov8iqcwfr7 foreign key (bank_id) references bank (id)|
+1486325984074|37|statement|connection 2|select max(id) from bank|select max(id) from bank
+1486325984179|59|statement|connection 2|insert into bank (name, id) values (?, ?)|insert into bank (name, id) values ('Gold Bank', 1)
+1486325984228|46|commit|connection 2||
+1486325984371|94|statement|connection 3|alter table bank_account drop foreign key FK_thgcmdvyemj0yg060nvfictd6|
+1486325984527|154|statement|connection 3|alter table client drop foreign key FK_e8oc3sulkpvxdascbnkpchunx|
+1486325984660|132|statement|connection 3|alter table worker drop foreign key FK_89c2qks2v6rs5fdov8iqcwfr7|
+1486325984811|149|statement|connection 3|drop table if exists bank|
+1486325985006|193|statement|connection 3|drop table if exists bank_account|
+1486325985126|119|statement|connection 3|drop table if exists client|
+1486325985298|171|statement|connection 3|drop table if exists worker|
+1486326039676|10|statement|connection 1|alter table bank_account drop foreign key FK_thgcmdvyemj0yg060nvfictd6|
+1486326039681|1|statement|connection 1|alter table client drop foreign key FK_e8oc3sulkpvxdascbnkpchunx|
+1486326039683|0|statement|connection 1|alter table worker drop foreign key FK_89c2qks2v6rs5fdov8iqcwfr7|
+1486326039686|1|statement|connection 1|drop table if exists bank|
+1486326039695|6|statement|connection 1|drop table if exists bank_account|
+1486326039707|9|statement|connection 1|drop table if exists client|
+1486326039714|5|statement|connection 1|drop table if exists worker|
+1486326040286|570|statement|connection 1|create table bank (id bigint not null, name varchar(255), primary key (id))|
+1486326040688|400|statement|connection 1|create table bank_account (id bigint not null, amount double precision, amount_of_credit double precision, currency double precision, client_id bigint not null, primary key (id))|
+1486326041000|311|statement|connection 1|create table client (id bigint not null, address varchar(255), email varchar(255), first_name varchar(255), last_name varchar(255), phone_number varchar(255), bank_id bigint not null, primary key (id))|
+1486326041263|260|statement|connection 1|create table worker (id bigint not null, first_name varchar(255), last_name varchar(255), phone_number varchar(255), status varchar(255), bank_id bigint not null, primary key (id))|
+1486326042088|824|statement|connection 1|alter table bank_account add index FK_thgcmdvyemj0yg060nvfictd6 (client_id), add constraint FK_thgcmdvyemj0yg060nvfictd6 foreign key (client_id) references client (id)|
+1486326042872|782|statement|connection 1|alter table client add index FK_e8oc3sulkpvxdascbnkpchunx (bank_id), add constraint FK_e8oc3sulkpvxdascbnkpchunx foreign key (bank_id) references bank (id)|
+1486326044339|1463|statement|connection 1|alter table worker add index FK_89c2qks2v6rs5fdov8iqcwfr7 (bank_id), add constraint FK_89c2qks2v6rs5fdov8iqcwfr7 foreign key (bank_id) references bank (id)|
+1486326047573|6|statement|connection 2|select max(id) from bank|select max(id) from bank
+1486326047644|21|statement|connection 2|insert into bank (name, id) values (?, ?)|insert into bank (name, id) values ('Gold Bank', 1)
+1486326047926|279|commit|connection 2||
+1486326048076|113|statement|connection 3|alter table bank_account drop foreign key FK_thgcmdvyemj0yg060nvfictd6|
+1486326048237|160|statement|connection 3|alter table client drop foreign key FK_e8oc3sulkpvxdascbnkpchunx|
+1486326048346|108|statement|connection 3|alter table worker drop foreign key FK_89c2qks2v6rs5fdov8iqcwfr7|
+1486326048646|299|statement|connection 3|drop table if exists bank|
+1486326048922|274|statement|connection 3|drop table if exists bank_account|
+1486326049080|157|statement|connection 3|drop table if exists client|
+1486326049491|406|statement|connection 3|drop table if exists worker|
+1486327189030|1|statement|connection 1|alter table bank_account drop foreign key FK_thgcmdvyemj0yg060nvfictd6|
+1486327189035|1|statement|connection 1|alter table client drop foreign key FK_e8oc3sulkpvxdascbnkpchunx|
+1486327189037|0|statement|connection 1|alter table worker drop foreign key FK_89c2qks2v6rs5fdov8iqcwfr7|
+1486327189040|1|statement|connection 1|drop table if exists bank|
+1486327189042|0|statement|connection 1|drop table if exists bank_account|
+1486327189044|0|statement|connection 1|drop table if exists client|
+1486327189050|5|statement|connection 1|drop table if exists worker|
+1486327189368|317|statement|connection 1|create table bank (id bigint not null, name varchar(255), primary key (id))|
+1486327189621|252|statement|connection 1|create table bank_account (id bigint not null, amount double precision, amount_of_credit double precision, currency double precision, client_id bigint not null, primary key (id))|
+1486327190172|549|statement|connection 1|create table client (id bigint not null, address varchar(255), email varchar(255), first_name varchar(255), last_name varchar(255), phone_number varchar(255), bank_id bigint not null, primary key (id))|
+1486327190453|280|statement|connection 1|create table worker (id bigint not null, first_name varchar(255), last_name varchar(255), phone_number varchar(255), status varchar(255), bank_id bigint not null, primary key (id))|
+1486327191226|772|statement|connection 1|alter table bank_account add index FK_thgcmdvyemj0yg060nvfictd6 (client_id), add constraint FK_thgcmdvyemj0yg060nvfictd6 foreign key (client_id) references client (id)|
+1486327192030|802|statement|connection 1|alter table client add index FK_e8oc3sulkpvxdascbnkpchunx (bank_id), add constraint FK_e8oc3sulkpvxdascbnkpchunx foreign key (bank_id) references bank (id)|
+1486327192614|583|statement|connection 1|alter table worker add index FK_89c2qks2v6rs5fdov8iqcwfr7 (bank_id), add constraint FK_89c2qks2v6rs5fdov8iqcwfr7 foreign key (bank_id) references bank (id)|
+1486327194495|7|statement|connection 2|select max(id) from bank|select max(id) from bank
+1486327194535|12|statement|connection 2|insert into bank (name, id) values (?, ?)|insert into bank (name, id) values ('Gold Bank', 1)
+1486327194570|32|commit|connection 2||
+1486327194674|1|statement|connection 3|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_
+1486327194683|0|commit|connection 3||
+1486327194732|1|statement|connection 4|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_ where bank0_.name=?|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_ where bank0_.name='Gold Bank'
+1486327194761|2|statement|connection 5|insert into bank (name, id) values (?, ?)|insert into bank (name, id) values ('Super Bank', 2)
+1486327194794|32|commit|connection 5||
+1486327194890|19|statement|connection 6|select bank0_.id as id1_0_0_, bank0_.name as name2_0_0_ from bank bank0_ where bank0_.id=?|select bank0_.id as id1_0_0_, bank0_.name as name2_0_0_ from bank bank0_ where bank0_.id=0
+1486327194892|0|rollback|connection 6||
+1486327195078|128|statement|connection 7|alter table bank_account drop foreign key FK_thgcmdvyemj0yg060nvfictd6|
+1486327195166|87|statement|connection 7|alter table client drop foreign key FK_e8oc3sulkpvxdascbnkpchunx|
+1486327195284|116|statement|connection 7|alter table worker drop foreign key FK_89c2qks2v6rs5fdov8iqcwfr7|
+1486327195374|87|statement|connection 7|drop table if exists bank|
+1486327195479|105|statement|connection 7|drop table if exists bank_account|
+1486327195603|123|statement|connection 7|drop table if exists client|
+1486327196121|516|statement|connection 7|drop table if exists worker|
+1486327286851|30|statement|connection 1|alter table bank_account drop foreign key FK_thgcmdvyemj0yg060nvfictd6|
+1486327286871|17|statement|connection 1|alter table client drop foreign key FK_e8oc3sulkpvxdascbnkpchunx|
+1486327286881|7|statement|connection 1|alter table worker drop foreign key FK_89c2qks2v6rs5fdov8iqcwfr7|
+1486327286898|14|statement|connection 1|drop table if exists bank|
+1486327286947|24|statement|connection 1|drop table if exists bank_account|
+1486327287010|33|statement|connection 1|drop table if exists client|
+1486327287073|35|statement|connection 1|drop table if exists worker|
+1486327288032|930|statement|connection 1|create table bank (id bigint not null, name varchar(255), primary key (id))|
+1486327288330|291|statement|connection 1|create table bank_account (id bigint not null, amount double precision, amount_of_credit double precision, currency double precision, client_id bigint not null, primary key (id))|
+1486327288550|219|statement|connection 1|create table client (id bigint not null, address varchar(255), email varchar(255), first_name varchar(255), last_name varchar(255), phone_number varchar(255), bank_id bigint not null, primary key (id))|
+1486327288771|220|statement|connection 1|create table worker (id bigint not null, first_name varchar(255), last_name varchar(255), phone_number varchar(255), status varchar(255), bank_id bigint not null, primary key (id))|
+1486327289484|712|statement|connection 1|alter table bank_account add index FK_thgcmdvyemj0yg060nvfictd6 (client_id), add constraint FK_thgcmdvyemj0yg060nvfictd6 foreign key (client_id) references client (id)|
+1486327290210|724|statement|connection 1|alter table client add index FK_e8oc3sulkpvxdascbnkpchunx (bank_id), add constraint FK_e8oc3sulkpvxdascbnkpchunx foreign key (bank_id) references bank (id)|
+1486327290760|547|statement|connection 1|alter table worker add index FK_89c2qks2v6rs5fdov8iqcwfr7 (bank_id), add constraint FK_89c2qks2v6rs5fdov8iqcwfr7 foreign key (bank_id) references bank (id)|
+1486327291896|7|statement|connection 2|select bank0_.id as id1_0_0_, bank0_.name as name2_0_0_ from bank bank0_ where bank0_.id=?|select bank0_.id as id1_0_0_, bank0_.name as name2_0_0_ from bank bank0_ where bank0_.id=0
+1486327291900|0|rollback|connection 2||
+1486327292145|201|statement|connection 3|alter table bank_account drop foreign key FK_thgcmdvyemj0yg060nvfictd6|
+1486327292302|155|statement|connection 3|alter table client drop foreign key FK_e8oc3sulkpvxdascbnkpchunx|
+1486327292435|131|statement|connection 3|alter table worker drop foreign key FK_89c2qks2v6rs5fdov8iqcwfr7|
+1486327292646|210|statement|connection 3|drop table if exists bank|
+1486327292818|166|statement|connection 3|drop table if exists bank_account|
+1486327293063|244|statement|connection 3|drop table if exists client|
+1486327293199|133|statement|connection 3|drop table if exists worker|
+1486327331385|1|statement|connection 1|alter table bank_account drop foreign key FK_thgcmdvyemj0yg060nvfictd6|
+1486327331392|0|statement|connection 1|alter table client drop foreign key FK_e8oc3sulkpvxdascbnkpchunx|
+1486327331395|0|statement|connection 1|alter table worker drop foreign key FK_89c2qks2v6rs5fdov8iqcwfr7|
+1486327331454|57|statement|connection 1|drop table if exists bank|
+1486327331456|0|statement|connection 1|drop table if exists bank_account|
+1486327331458|0|statement|connection 1|drop table if exists client|
+1486327331464|0|statement|connection 1|drop table if exists worker|
+1486327331836|371|statement|connection 1|create table bank (id bigint not null, name varchar(255), primary key (id))|
+1486327332104|267|statement|connection 1|create table bank_account (id bigint not null, amount double precision, amount_of_credit double precision, currency double precision, client_id bigint not null, primary key (id))|
+1486327332315|209|statement|connection 1|create table client (id bigint not null, address varchar(255), email varchar(255), first_name varchar(255), last_name varchar(255), phone_number varchar(255), bank_id bigint not null, primary key (id))|
+1486327332522|206|statement|connection 1|create table worker (id bigint not null, first_name varchar(255), last_name varchar(255), phone_number varchar(255), status varchar(255), bank_id bigint not null, primary key (id))|
+1486327333158|635|statement|connection 1|alter table bank_account add index FK_thgcmdvyemj0yg060nvfictd6 (client_id), add constraint FK_thgcmdvyemj0yg060nvfictd6 foreign key (client_id) references client (id)|
+1486327333840|681|statement|connection 1|alter table client add index FK_e8oc3sulkpvxdascbnkpchunx (bank_id), add constraint FK_e8oc3sulkpvxdascbnkpchunx foreign key (bank_id) references bank (id)|
+1486327334354|511|statement|connection 1|alter table worker add index FK_89c2qks2v6rs5fdov8iqcwfr7 (bank_id), add constraint FK_89c2qks2v6rs5fdov8iqcwfr7 foreign key (bank_id) references bank (id)|
+1486327335618|8|statement|connection 2|select max(id) from bank|select max(id) from bank
+1486327335653|1|statement|connection 2|insert into bank (name, id) values (?, ?)|insert into bank (name, id) values ('Gold Bank', 1)
+1486327335696|35|commit|connection 2||
+1486327335778|2|statement|connection 3|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_
+1486327335787|0|commit|connection 3||
+1486327335994|23|statement|connection 4|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_ where bank0_.name=?|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_ where bank0_.name='Gold Bank'
+1486327336104|1|statement|connection 5|insert into bank (name, id) values (?, ?)|insert into bank (name, id) values ('Super Bank', 2)
+1486327336137|32|commit|connection 5||
+1486327336829|54|statement|connection 6|select bank0_.id as id1_0_0_, bank0_.name as name2_0_0_ from bank bank0_ where bank0_.id=?|select bank0_.id as id1_0_0_, bank0_.name as name2_0_0_ from bank bank0_ where bank0_.id=0
+1486327336831|0|rollback|connection 6||
+1486327336966|92|statement|connection 7|alter table bank_account drop foreign key FK_thgcmdvyemj0yg060nvfictd6|
+1486327337080|112|statement|connection 7|alter table client drop foreign key FK_e8oc3sulkpvxdascbnkpchunx|
+1486327337167|85|statement|connection 7|alter table worker drop foreign key FK_89c2qks2v6rs5fdov8iqcwfr7|
+1486327337307|138|statement|connection 7|drop table if exists bank|
+1486327337437|126|statement|connection 7|drop table if exists bank_account|
+1486327337675|238|statement|connection 7|drop table if exists client|
+1486327338004|325|statement|connection 7|drop table if exists worker|
+1486327385218|2|statement|connection 1|alter table bank_account drop foreign key FK_thgcmdvyemj0yg060nvfictd6|
+1486327385222|0|statement|connection 1|alter table client drop foreign key FK_e8oc3sulkpvxdascbnkpchunx|
+1486327385225|0|statement|connection 1|alter table worker drop foreign key FK_89c2qks2v6rs5fdov8iqcwfr7|
+1486327385227|0|statement|connection 1|drop table if exists bank|
+1486327385235|6|statement|connection 1|drop table if exists bank_account|
+1486327385238|0|statement|connection 1|drop table if exists client|
+1486327385240|0|statement|connection 1|drop table if exists worker|
+1486327385605|363|statement|connection 1|create table bank (id bigint not null, name varchar(255), primary key (id))|
+1486327386239|633|statement|connection 1|create table bank_account (id bigint not null, amount double precision, amount_of_credit double precision, currency double precision, client_id bigint not null, primary key (id))|
+1486327386487|245|statement|connection 1|create table client (id bigint not null, address varchar(255), email varchar(255), first_name varchar(255), last_name varchar(255), phone_number varchar(255), bank_id bigint not null, primary key (id))|
+1486327386760|271|statement|connection 1|create table worker (id bigint not null, first_name varchar(255), last_name varchar(255), phone_number varchar(255), status varchar(255), bank_id bigint not null, primary key (id))|
+1486327387328|566|statement|connection 1|alter table bank_account add index FK_thgcmdvyemj0yg060nvfictd6 (client_id), add constraint FK_thgcmdvyemj0yg060nvfictd6 foreign key (client_id) references client (id)|
+1486327388319|988|statement|connection 1|alter table client add index FK_e8oc3sulkpvxdascbnkpchunx (bank_id), add constraint FK_e8oc3sulkpvxdascbnkpchunx foreign key (bank_id) references bank (id)|
+1486327389034|714|statement|connection 1|alter table worker add index FK_89c2qks2v6rs5fdov8iqcwfr7 (bank_id), add constraint FK_89c2qks2v6rs5fdov8iqcwfr7 foreign key (bank_id) references bank (id)|
+1486327390120|6|statement|connection 2|select max(id) from bank|select max(id) from bank
+1486327390191|5|statement|connection 2|insert into bank (name, id) values (?, ?)|insert into bank (name, id) values ('Gold Bank', 1)
+1486327390431|236|commit|connection 2||
+1486327390542|20|statement|connection 3|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_
+1486327390569|19|commit|connection 3||
+1486327390651|32|statement|connection 4|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_ where bank0_.name=?|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_ where bank0_.name='Gold Bank'
+1486327390666|1|statement|connection 5|insert into bank (name, id) values (?, ?)|insert into bank (name, id) values ('Super Bank', 2)
+1486327390706|39|commit|connection 5||
+1486327390863|142|statement|connection 6|alter table bank_account drop foreign key FK_thgcmdvyemj0yg060nvfictd6|
+1486327390951|85|statement|connection 6|alter table client drop foreign key FK_e8oc3sulkpvxdascbnkpchunx|
+1486327391056|103|statement|connection 6|alter table worker drop foreign key FK_89c2qks2v6rs5fdov8iqcwfr7|
+1486327391186|129|statement|connection 6|drop table if exists bank|
+1486327391307|120|statement|connection 6|drop table if exists bank_account|
+1486327391467|159|statement|connection 6|drop table if exists client|
+1486327392146|678|statement|connection 6|drop table if exists worker|
+1486327433521|1|statement|connection 1|alter table bank_account drop foreign key FK_thgcmdvyemj0yg060nvfictd6|
+1486327433547|0|statement|connection 1|alter table client drop foreign key FK_e8oc3sulkpvxdascbnkpchunx|
+1486327433567|11|statement|connection 1|alter table worker drop foreign key FK_89c2qks2v6rs5fdov8iqcwfr7|
+1486327433571|2|statement|connection 1|drop table if exists bank|
+1486327433578|5|statement|connection 1|drop table if exists bank_account|
+1486327433581|0|statement|connection 1|drop table if exists client|
+1486327433586|0|statement|connection 1|drop table if exists worker|
+1486327434125|537|statement|connection 1|create table bank (id bigint not null, name varchar(255), primary key (id))|
+1486327434349|222|statement|connection 1|create table bank_account (id bigint not null, amount double precision, amount_of_credit double precision, currency double precision, client_id bigint not null, primary key (id))|
+1486327434654|303|statement|connection 1|create table client (id bigint not null, address varchar(255), email varchar(255), first_name varchar(255), last_name varchar(255), phone_number varchar(255), bank_id bigint not null, primary key (id))|
+1486327434935|279|statement|connection 1|create table worker (id bigint not null, first_name varchar(255), last_name varchar(255), phone_number varchar(255), status varchar(255), bank_id bigint not null, primary key (id))|
+1486327435568|631|statement|connection 1|alter table bank_account add index FK_thgcmdvyemj0yg060nvfictd6 (client_id), add constraint FK_thgcmdvyemj0yg060nvfictd6 foreign key (client_id) references client (id)|
+1486327436272|700|statement|connection 1|alter table client add index FK_e8oc3sulkpvxdascbnkpchunx (bank_id), add constraint FK_e8oc3sulkpvxdascbnkpchunx foreign key (bank_id) references bank (id)|
+1486327436981|708|statement|connection 1|alter table worker add index FK_89c2qks2v6rs5fdov8iqcwfr7 (bank_id), add constraint FK_89c2qks2v6rs5fdov8iqcwfr7 foreign key (bank_id) references bank (id)|
+1486327438566|7|statement|connection 2|select max(id) from bank|select max(id) from bank
+1486327438601|1|statement|connection 2|insert into bank (name, id) values (?, ?)|insert into bank (name, id) values ('Gold Bank', 1)
+1486327438808|205|commit|connection 2||
+1486327438901|1|statement|connection 3|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_
+1486327438916|0|commit|connection 3||
+1486327439001|1|statement|connection 4|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_ where bank0_.name=?|select bank0_.id as id1_0_, bank0_.name as name2_0_ from bank bank0_ where bank0_.name='Gold Bank'
+1486327439098|3|statement|connection 5|insert into bank (name, id) values (?, ?)|insert into bank (name, id) values ('Super Bank', 2)
+1486327439199|100|commit|connection 5||
+1486327439395|137|statement|connection 6|alter table bank_account drop foreign key FK_thgcmdvyemj0yg060nvfictd6|
+1486327439471|74|statement|connection 6|alter table client drop foreign key FK_e8oc3sulkpvxdascbnkpchunx|
+1486327439554|83|statement|connection 6|alter table worker drop foreign key FK_89c2qks2v6rs5fdov8iqcwfr7|
+1486327439857|301|statement|connection 6|drop table if exists bank|
+1486327439992|134|statement|connection 6|drop table if exists bank_account|
+1486327440291|297|statement|connection 6|drop table if exists client|
+1486327440498|206|statement|connection 6|drop table if exists worker|

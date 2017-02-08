@@ -3,8 +3,8 @@
   <ID>DATABASE</ID>
   <OriginalElement>e3b91f98-19ad-4e6e-9f80-0de167001b18.TABLE:testdb.bank</OriginalElement>
   <nodes>
-    <node x="173.5" y="0.0">e3b91f98-19ad-4e6e-9f80-0de167001b18.TABLE:testdb.bank</node>
     <node x="0.0" y="124.0">e3b91f98-19ad-4e6e-9f80-0de167001b18.TABLE:testdb.client</node>
+    <node x="173.5" y="0.0">e3b91f98-19ad-4e6e-9f80-0de167001b18.TABLE:testdb.bank</node>
     <node x="257.0" y="135.0">e3b91f98-19ad-4e6e-9f80-0de167001b18.TABLE:testdb.worker</node>
     <node x="20.0" y="358.0">e3b91f98-19ad-4e6e-9f80-0de167001b18.TABLE:testdb.bank_account</node>
   </nodes>
@@ -27,8 +27,10 @@
       <point x="-34.25" y="37.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="237.0" y="249.0" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="1.0" x="237.0" y="235.5" />
+  <SelectedNodes>
+    <node>e3b91f98-19ad-4e6e-9f80-0de167001b18.TABLE:testdb.bank</node>
+  </SelectedNodes>
   <Categories>
     <Category>Key columns</Category>
     <Category>Columns</Category>

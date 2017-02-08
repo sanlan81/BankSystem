@@ -18,9 +18,19 @@
         <hb.manager>4.2.5.Final</hb.manager>
         <spring.test>3.2.4.RELEASE</spring.test>
         <junit.version>4.11</junit.version>
+        <dbunit.version>2.5.0</dbunit.version>
+        <spring-test-dbunit.version>1.2.1</spring-test-dbunit.version>
     </properties>
 
+  <!--  &lt;!&ndash; Added spring Boot&ndash;&gt;
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.1.RELEASE</version>
+        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;
+    </parent>-->
     <dependencies>
+
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -48,12 +58,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>${hb.manager}</version>
-        </dependency>
-
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
@@ -67,7 +71,49 @@
             <scope>test</scope>
         </dependency>
 
-    </dependencies>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hb.manager}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.springtestdbunit</groupId>
+            <artifactId>spring-test-dbunit</artifactId>
+            <version>${spring-test-dbunit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <version>${dbunit.version}</version>
+        </dependency>
+   <!--     <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <version>1.0.1.Final</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <version>2.4.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.5</version>
+        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/p6spy/p6spy -->
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+            </dependencies>
 
     <build>
         <finalName>bank-system</finalName>

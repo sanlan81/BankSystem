@@ -17,8 +17,8 @@ import java.util.Properties;
 @ComponentScan("com.spd")
 public class TestDataBaseConfig {
 
-    private static final String PROPERTY_NAME_DATABASE_DRIVER = "com.mysql.jdbc.Driver";
-    private static final String PROPERTY_NAME_DATABASE_URL = "jdbc:mysql://localhost:3306/testdb";
+    private static final String PROPERTY_NAME_DATABASE_DRIVER = "com.p6spy.engine.spy.P6SpyDriver";
+    private static final String PROPERTY_NAME_DATABASE_URL = "jdbc:p6spy:mysql://localhost:3306/testdb";
     private static final String PROPERTY_NAME_DATABASE_USERNAME = "sanlan81";
     private static final String PROPERTY_NAME_DATABASE_PASSWORD = "doublebass81";
 

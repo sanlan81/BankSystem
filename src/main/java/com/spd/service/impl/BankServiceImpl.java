@@ -19,19 +19,13 @@ public class BankServiceImpl implements BankService {
 
     @Override
     public Bank addBank(Bank bank) {
-        Bank savedBank = bankRepository.saveAndFlush(bank);
 
-        return savedBank;
+        return bankRepository.saveAndFlush(bank);
     }
 
     @Override
     public void delete(long id) {
         bankRepository.delete(id);
-    }
-
-    @Override
-    public Bank getByName(String name) {
-        return bankRepository.findByName(name);
     }
 
     @Override

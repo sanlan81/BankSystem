@@ -5,6 +5,7 @@ package com.spd.entity;
  */
 import com.spd.entity.enums.WorkerStatus;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 
@@ -16,6 +17,7 @@ public class Worker {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name= "increment", strategy= "increment")
     @Column(name = "id", length = 6, nullable = false)
+    @Autowired
     private long id;
 
     @Column(name = "first_name")
@@ -41,6 +43,7 @@ public class Worker {
     }
 
     public Worker(String firstName, String lastName, WorkerStatus status, String phoneNumber, Bank bank) {
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.status = status;
@@ -48,7 +51,7 @@ public class Worker {
         this.bank = bank;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -95,5 +98,18 @@ public class Worker {
     public void setBank(Bank bank) {
         this.bank = bank;
     }
+
+
+
+    @Override
+    public String toString() {
+        return "Worker{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
+
 
 }
