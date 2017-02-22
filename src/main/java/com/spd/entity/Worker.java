@@ -4,11 +4,17 @@ package com.spd.entity;
  * Created by Sasha on 03.02.2017.
  */
 import com.spd.entity.enums.WorkerStatus;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
-
+@RequiredArgsConstructor()
+@NoArgsConstructor
+@Data
 @Entity
 @Table(name = "worker")
 public class Worker {
@@ -21,95 +27,22 @@ public class Worker {
     private long id;
 
     @Column(name = "first_name")
-    private String firstName;
+    @NonNull private String firstName;
 
     @Column(name = "last_name")
-    private String lastName;
+    @NonNull private String lastName;
 
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
-    private WorkerStatus status;
+    @NonNull private WorkerStatus status;
 
     @Column(name = "phone_number")
-    private String phoneNumber;
+    @NonNull private String phoneNumber;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "bank_id", nullable = false)
-    private Bank bank;
+    @NonNull private Bank bank;
 
-
-
-    public Worker() {
-    }
-
-    public Worker(String firstName, String lastName, WorkerStatus status, String phoneNumber, Bank bank) {
-
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.status = status;
-        this.phoneNumber = phoneNumber;
-        this.bank = bank;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public WorkerStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(WorkerStatus status) {
-        this.status = status;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public Bank getBank() {
-        return bank;
-    }
-
-    public void setBank(Bank bank) {
-        this.bank = bank;
-    }
-
-
-
-    @Override
-    public String toString() {
-        return "Worker{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
-    }
 
 
 }

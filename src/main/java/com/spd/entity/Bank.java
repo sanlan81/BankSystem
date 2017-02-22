@@ -4,9 +4,16 @@ package com.spd.entity;
  * Created by Sasha on 03.02.2017.
  */
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
-import javax.persistence.*;
 
+import javax.persistence.*;
+@RequiredArgsConstructor()
+@NoArgsConstructor
+@Data
 @Entity
 @Table(name = "bank")
 public class Bank {
@@ -18,36 +25,7 @@ public class Bank {
     private long id;
 
     @Column(name = "name")
-    private String name;
+    @NonNull private String name;
 
-    public Bank() {
-    }
 
-    public Bank(String name) {
-        this.name = name;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Bank{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }
