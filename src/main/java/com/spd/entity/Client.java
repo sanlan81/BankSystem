@@ -4,11 +4,10 @@ package com.spd.entity;
  * Created by Sasha on 03.02.2017.
  */
 import lombok.Data;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
-@RequiredArgsConstructor()
+
 @Data
 @Entity
 @Table(name = "client")
@@ -21,21 +20,31 @@ public class Client {
     private long id;
 
     @Column(name = "first_name")
-    @NonNull private String firstName;
+     private String firstName;
+
 
     @Column(name = "last_name")
-    @NonNull private String lastName;
+     private String lastName;
 
     @Column(name = "phone_number")
-    @NonNull private String phoneNumber;
+     private String phoneNumber;
 
     @Column(name = "address")
-    @NonNull private String address;
+     private String address;
 
     @Column(name = "email")
-    @NonNull private String email;
+     private String email;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "bank_id", nullable = false)
-    @NonNull private Bank bank;
+     private Bank bank;
+
+    public Client(String firstName, String lastName, String phoneNumber, String address, String email, Bank bank) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.email = email;
+        this.bank = bank;
+    }
 }

@@ -6,13 +6,11 @@ package com.spd.entity;
 import com.spd.entity.enums.WorkerStatus;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
-@RequiredArgsConstructor()
+
 @NoArgsConstructor
 @Data
 @Entity
@@ -27,22 +25,28 @@ public class Worker {
     private long id;
 
     @Column(name = "first_name")
-    @NonNull private String firstName;
+     private String firstName;
 
     @Column(name = "last_name")
-    @NonNull private String lastName;
+     private String lastName;
 
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
-    @NonNull private WorkerStatus status;
+     private WorkerStatus status;
 
     @Column(name = "phone_number")
-    @NonNull private String phoneNumber;
+     private String phoneNumber;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "bank_id", nullable = false)
-    @NonNull private Bank bank;
+     private Bank bank;
 
 
-
+    public Worker(String firstName, String lastName, WorkerStatus status, String phoneNumber, Bank bank) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.status = status;
+        this.phoneNumber = phoneNumber;
+        this.bank = bank;
+    }
 }

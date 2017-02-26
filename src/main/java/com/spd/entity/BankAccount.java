@@ -5,11 +5,10 @@ package com.spd.entity;
  */
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
-@RequiredArgsConstructor()
+
 @NoArgsConstructor
 @Data
 @Entity
@@ -20,19 +19,27 @@ public class BankAccount {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name= "increment", strategy= "increment")
     @Column(name = "id", length = 6, nullable = false)
+
     private long id;
 
     @Column(name = "currency")
-    @NonNull private double currency;
+     private double currency;
 
     @Column(name = "amount")
-    @NonNull private double amount;
+     private double amount;
 
     @Column(name = "amount_of_credit")
-    @NonNull private double amountOfCredit;
+     private double amountOfCredit;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "client_id", nullable = false)
-    @NonNull private Client client;
+     private Client client;
+
+    public BankAccount(double currency, double amount, double amountOfCredit, Client client) {
+        this.currency = currency;
+        this.amount = amount;
+        this.amountOfCredit = amountOfCredit;
+        this.client = client;
+    }
 
 }

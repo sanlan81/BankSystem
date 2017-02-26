@@ -13,6 +13,7 @@ public interface WorkerService {
         void delete(long id);
         Worker editWorker(Worker worker);
         List<Worker> getAll();
+
         //Worker get(int id);
 
 }

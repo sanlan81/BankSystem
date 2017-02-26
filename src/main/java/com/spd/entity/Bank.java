@@ -6,17 +6,17 @@ package com.spd.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-@RequiredArgsConstructor()
+import java.io.Serializable;
+
+
 @NoArgsConstructor
 @Data
 @Entity
 @Table(name = "bank")
-public class Bank {
+public class Bank implements Serializable{
 
     @Id
     @GeneratedValue(generator = "increment")
@@ -25,7 +25,9 @@ public class Bank {
     private long id;
 
     @Column(name = "name")
-    @NonNull private String name;
+     private String name;
 
-
+    public Bank(String name) {
+        this.name = name;
+    }
 }

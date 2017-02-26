@@ -14,4 +14,9 @@ public interface BankService {
     Bank editBank(Bank bank);
     List<Bank> getAll();
 
+
+
+    Bank getByName(String name);
+    void refreshAllBanks();
+
     }

@@ -36,6 +36,8 @@ public class BankRepositoryTest {
     @Resource
     private BankRepository bankRepository;
 
+
+
     private Bank bank1, bank2, bank3;
     private long id;
 
@@ -95,5 +97,6 @@ public class BankRepositoryTest {
         assertThat(bankName, is(notNullValue()));
         assertThat(bankName.getName(), is(bank1.getName()));
     }
+
 
 }
