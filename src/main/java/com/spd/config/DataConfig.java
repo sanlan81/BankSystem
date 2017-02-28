@@ -9,10 +9,7 @@ import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.ehcache.EhCacheCacheManager;
 import org.springframework.cache.ehcache.EhCacheManagerFactoryBean;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -31,6 +28,7 @@ import java.util.Properties;
 @PropertySource("classpath:app.properties")
 @EnableJpaRepositories("com.spd.repository")
 @EnableCaching
+@EnableAspectJAutoProxy
 public class DataConfig {
 
     private static final String PROP_DATABASE_DRIVER = "db.driver";
@@ -86,8 +84,8 @@ public class DataConfig {
         return properties;
     }
 
-	//Suitable for basic use cases, no persistence capabilities or eviction contracts.
-	/*@Bean
+    //Suitable for basic use cases, no persistence capabilities or eviction contracts.
+    /*@Bean
 	public CacheManager cacheManager() {
         	// configure and return an implementation of Spring's CacheManager SPI
 	        SimpleCacheManager cacheManager = new SimpleCacheManager();
@@ -100,6 +98,7 @@ public class DataConfig {
     public CacheManager cacheManager() {
         return new EhCacheCacheManager(ehCacheCacheManager().getObject());
     }
+
     @Bean
     public EhCacheManagerFactoryBean ehCacheCacheManager() {
         EhCacheManagerFactoryBean factory = new EhCacheManagerFactoryBean();
@@ -107,4 +106,9 @@ public class DataConfig {
         factory.setShared(true);
         return factory;
     }
+
+
+
+
+
 }

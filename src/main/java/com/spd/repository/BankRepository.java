@@ -14,6 +14,5 @@ import java.util.List;
 public interface BankRepository extends JpaRepository<Bank, Long> {
 
     @Query("select b from Bank b where b.name = :name")
-     Bank findByName(@Param("name") String name);
-
+    Bank findByName(@Param("name") String name);
 }

@@ -11,6 +11,7 @@ public class SampleApplication {
 	private static final Logger logger = LoggerFactory.getLogger(SampleApplication.class);
 	
 	public static void main(String[] args){
+
 		AbstractApplicationContext context = new AnnotationConfigApplicationContext(DataConfig.class);
 
 		BankService service = (BankService) context.getBean("bankService");
@@ -25,6 +26,6 @@ public class SampleApplication {
 		logger.info("Inform [after refresh]->" + service.getByName("FREEDOM"));
 		
 		context.close();
+
 	}
-	
 }

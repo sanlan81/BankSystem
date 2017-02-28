@@ -36,8 +36,6 @@ public class BankRepositoryTest {
     @Resource
     private BankRepository bankRepository;
 
-
-
     private Bank bank1, bank2, bank3;
     private long id;
 
@@ -91,12 +89,10 @@ public class BankRepositoryTest {
     }
 
     @Test
-    public void testShouldBankEqualName() throws Exception{
+    public void testShouldBankEqualName() throws Exception {
 
         Bank bankName = bankRepository.findByName("Bank Flora");
         assertThat(bankName, is(notNullValue()));
         assertThat(bankName.getName(), is(bank1.getName()));
     }
-
-
 }

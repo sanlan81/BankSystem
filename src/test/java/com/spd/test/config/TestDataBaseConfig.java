@@ -31,7 +31,7 @@ public class TestDataBaseConfig {
 
 
     @Bean(initMethod = "migrate")
-        Flyway flyway() {
+    Flyway flyway() {
         Flyway flyway = new Flyway();
         flyway.setBaselineOnMigrate(true);
         flyway.setDataSource(dataSource());
@@ -73,10 +73,9 @@ public class TestDataBaseConfig {
 
     private Properties hibernateProp() {
         Properties properties = new Properties();
-        properties.put("hibernate.dialect",	PROPERTY_NAME_HIBERNATE_DIALECT);
+        properties.put("hibernate.dialect", PROPERTY_NAME_HIBERNATE_DIALECT);
         properties.put("hibernate.show_sql", PROPERTY_NAME_HIBERNATE_SHOW_SQL);
         properties.put("hibernate.hbm2ddl.auto", PROPERTY_NAME_HIBERNATE_HBM2DDL_AUTO);
         return properties;
     }
-
 }

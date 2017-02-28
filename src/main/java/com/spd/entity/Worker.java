@@ -19,27 +19,27 @@ public class Worker {
 
     @Id
     @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "id", length = 6, nullable = false)
     @Autowired
     private long id;
 
     @Column(name = "first_name")
-     private String firstName;
+    private String firstName;
 
     @Column(name = "last_name")
-     private String lastName;
+    private String lastName;
 
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
-     private WorkerStatus status;
+    private WorkerStatus status;
 
     @Column(name = "phone_number")
-     private String phoneNumber;
+    private String phoneNumber;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "bank_id", nullable = false)
-     private Bank bank;
+    private Bank bank;
 
 
     public Worker(String firstName, String lastName, WorkerStatus status, String phoneNumber, Bank bank) {

@@ -38,24 +38,23 @@ public class WorkerRepositoryTest {
     @Resource
     private WorkerRepository workerRepository;
 
-    private Worker worker1 ,worker2,worker3;
+    private Worker worker1, worker2, worker3;
     private Long id;
-    private Bank bank1,bank2,bank3;
-
+    private Bank bank1, bank2, bank3;
 
 
     @Before
     public void setUp() throws Exception {
         bank1 = new Bank("Bank Flora");
-        worker1 = new Worker("Gena","Pherdishenko",MANAGER,"33-22-90",bank1);
+        worker1 = new Worker("Gena", "Pherdishenko", MANAGER, "33-22-90", bank1);
         worker1.setId(1);
 
         bank2 = new Bank("Bank Money");
-        worker2 = new Worker("Slava","Pherdishenko",OFFICERWORKER,"33-22-91",bank2);
+        worker2 = new Worker("Slava", "Pherdishenko", OFFICERWORKER, "33-22-91", bank2);
         worker2.setId(2);
 
         bank3 = new Bank("Bank Money");
-        worker3 = new Worker("Hannah","Smith",MANAGER,"33-00-90",bank3);
+        worker3 = new Worker("Hannah", "Smith", MANAGER, "33-00-90", bank3);
         worker3.setId(3);
 
         this.workerRepository.save(worker1);
@@ -71,7 +70,7 @@ public class WorkerRepositoryTest {
 
 
     @Test
-    public void testShouldBeEqualSize()throws Exception{
+    public void testShouldBeEqualSize() throws Exception {
 
         final List<Worker> allWorkers = workerRepository.findAll();
         assertThat(allWorkers.size(), is(3));
@@ -101,22 +100,21 @@ public class WorkerRepositoryTest {
         assertThat(workerRepository.findOne(id), is(nullValue()));
     }
 
-       @Test
-    public void testCountWorkers()throws Exception{
-           assertThat(this.workerRepository.findAll().size(), is(3));
+    @Test
+    public void testCountWorkers() throws Exception {
+        assertThat(this.workerRepository.findAll().size(), is(3));
 
     }
 
     @Test
-    public void testUpdate()throws Exception{
+    public void testUpdate() throws Exception {
 
         Worker foundWorker = workerRepository.findOne(worker1.getId());
         foundWorker.setFirstName("My new name Sregey");
         workerRepository.save(foundWorker);
         Worker updatedWorker = workerRepository.findOne(worker1.getId());
-       assertThat(updatedWorker.getFirstName(), is(foundWorker.getFirstName()));
+        assertThat(updatedWorker.getFirstName(), is(foundWorker.getFirstName()));
     }
-
 
     @Test
     public void testShouldNotReturnCorrectly() throws Exception {
@@ -135,7 +133,7 @@ public class WorkerRepositoryTest {
     }
 
     @Test
-    public void testFindStatus()throws Exception{
+    public void testFindStatus() throws Exception {
 
         List<Worker> manager = workerRepository.findAll();
         assertThat(MANAGER, is(manager.get(0).getStatus()));

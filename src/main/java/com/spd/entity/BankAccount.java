@@ -17,23 +17,23 @@ public class BankAccount {
 
     @Id
     @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "id", length = 6, nullable = false)
 
     private long id;
 
     @Column(name = "currency")
-     private double currency;
+    private double currency;
 
     @Column(name = "amount")
-     private double amount;
+    private double amount;
 
     @Column(name = "amount_of_credit")
-     private double amountOfCredit;
+    private double amountOfCredit;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "client_id", nullable = false)
-     private Client client;
+    private Client client;
 
     public BankAccount(double currency, double amount, double amountOfCredit, Client client) {
         this.currency = currency;
@@ -41,5 +41,4 @@ public class BankAccount {
         this.amountOfCredit = amountOfCredit;
         this.client = client;
     }
-
 }

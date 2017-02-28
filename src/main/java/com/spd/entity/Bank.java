@@ -16,16 +16,16 @@ import java.io.Serializable;
 @Data
 @Entity
 @Table(name = "bank")
-public class Bank implements Serializable{
+public class Bank implements Serializable {
 
     @Id
     @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "id", length = 6, nullable = false)
     private long id;
 
     @Column(name = "name")
-     private String name;
+    private String name;
 
     public Bank(String name) {
         this.name = name;

@@ -41,7 +41,6 @@ public class BankServiceImpl implements BankService {
     }
 
 
-
     @Override
     @Cacheable(value = "banks")
     public Bank getByName(String name) {
@@ -54,7 +53,7 @@ public class BankServiceImpl implements BankService {
         //This method will remove all 'banks' from cache, say as a result of flush API.
     }
 
-    public void slowLookupOperation(){
+    public void slowLookupOperation() {
         try {
             long time = 5000L;
             Thread.sleep(time);

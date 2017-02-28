@@ -21,6 +21,7 @@
         <dbunit.version>2.5.0</dbunit.version>
         <hibernate.version>5.0.0.Final</hibernate.version>
         <springframework.version>4.3.0.RELEASE</springframework.version>
+        <aspectj.version>1.8.2</aspectj.version>
         <spring-test-dbunit.version>1.2.1</spring-test-dbunit.version>
     </properties>
 
@@ -42,7 +43,7 @@
             <version>${springframework.version}</version>
         </dependency>
 
-         <dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.mvc}</version>
@@ -59,6 +60,39 @@
             <artifactId>spring-test</artifactId>
             <version>${spring.test}</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
+        <!--AOP-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
+        <!--aspectj-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+
+        <!-- cglib -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.2.4</version>
         </dependency>
 
         <dependency>
@@ -82,7 +116,7 @@
         </dependency>
 
         <!--Hibernate -->
-         <dependency>
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hb.manager}</version>
@@ -104,10 +138,10 @@
 
         <!-- Flyway-->
         <dependency>
-        <groupId>org.flywaydb</groupId>
-        <artifactId>flyway-core</artifactId>
-        <version>4.0.3</version>
-    </dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>4.0.3</version>
+        </dependency>
 
         <!-- P6Spy -->
         <dependency>
